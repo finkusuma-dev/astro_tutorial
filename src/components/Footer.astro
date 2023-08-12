@@ -5,13 +5,18 @@ const username = "withastro";
 ---
 
 <footer>
-  <hr class="hr" />
-  <p>
-    Learn more about my projects on <a
-      href={`https://www.${platform}.com/${username}`}>{platform}</a
-    >!
-  </p>
-  <Social platform="twitter" username="astrodotbuild" />
-  <Social platform="github" username="withastro" />
-  <Social platform="youtube" username="astrodotbuild" />
+  <hr />
+  <div>
+    <Social platform="twitter" username="astrodotbuild" />
+    <Social platform="github" username="withastro" />
+    <Social platform="youtube" username="astrodotbuild" />
+  </div>
 </footer>
+
+<style>
+  footer > div {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+</style>
