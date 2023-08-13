@@ -14,23 +14,23 @@ const { frontmatter } = Astro.props;
 
   <div class="tags">
 
-    <span>Tags:</span>
+    <!-- <span>Tags:</span> -->
     <span>
-    <ul >
+    <div class="tags" >
       {
         frontmatter.tags?.map((tag) => (
-          <li>
+          <p class="tag">
             <a href=`/tags/${tag}` >#{tag}</a>
-            </li>
+          </p>
             ))
           }
-  </ul>
+  </div>
 </div>
 </span>
 </BaseLayout>
 
 <style>
-  .tags {
+  /* .tags {
     font-size: 0.8rem;
   }
 
@@ -45,6 +45,23 @@ const { frontmatter } = Astro.props;
   
   .tags li a {
     text-decoration:none;
+  } */
+  a {
+    color: #00539F;
+  }
 
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+
+  .tag {
+    margin: 0.25em;
+    border: dotted 1px #a1a1a1;
+    border-radius: .5em;
+    padding: .5em 1em;
+    font-size: 1.15em;
+    background-color: #F8FCFD;
   }
 </style>
