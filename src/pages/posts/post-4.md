@@ -7,14 +7,14 @@ image:
   url: "https://docs.astro.build/assets/rays.webp"
   alt: "Thumbnail of Astro rays."
 pubDate: 2023-08-13
-tags: ["astro", "blog"]
+tags: ["astro", "blog", "coding"]
 ---
 
 Astro Rocks 👍.
 
 This is what I'm looking for. I I'll use this to make my coding blog.
 
-Let's test codes:
+Let's test the code:
 
 ```javascript
 let word = "Stunning";
