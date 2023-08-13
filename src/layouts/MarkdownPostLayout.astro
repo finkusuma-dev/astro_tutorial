@@ -11,4 +11,40 @@ const { frontmatter } = Astro.props;
   <p>Written by {frontmatter.author}</p>
   <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
   <slot />
+
+  <div class="tags">
+
+    <span>Tags:</span>
+    <span>
+    <ul >
+      {
+        frontmatter.tags?.map((tag) => (
+          <li>
+            <a href=`/tags/${tag}` >#{tag}</a>
+            </li>
+            ))
+          }
+  </ul>
+</div>
+</span>
 </BaseLayout>
+
+<style>
+  .tags {
+    font-size: 0.8rem;
+  }
+
+  .tags ul {
+    padding-left: 0;
+    display: inline-block;
+  }
+
+  .tags li {
+    display: inline;
+  }
+  
+  .tags li a {
+    text-decoration:none;
+
+  }
+</style>
