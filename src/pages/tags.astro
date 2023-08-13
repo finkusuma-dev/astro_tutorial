@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from "../components/BlogPost.astro";
+
+const allPosts = await Astro.glob("./posts/*.md");
+
+let allTags = [];
+for (const post of allPosts) {
+  // console.log("post", post);
+  for (const tag of post.frontmatter.tags) {
+    if (!allTags.includes(tag)) {
+      allTags.push(tag);
+    }
+  }
+}
+
+const pageTitle = "All Tags";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <p>All tags in the blog posts</p>
+  <ul>
+    {
+      allTags.map((tag) => (
+        <li>
+          <a href={`/tags/${tag}`}>{tag}</a>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>
